@@ -1,7 +1,7 @@
 # --------------------------------------------------------------- Imports ---------------------------------------------------------------- #
 
 # System
-from typing import Optional
+from typing import Optional, Union, List
 
 # ---------------------------------------------------------------------------------------------------------------------------------------- #
 
@@ -17,11 +17,13 @@ class Paraphraser:
         self,
         input_language: str = 'en',
         secondary_language: str = 'es',
-        random_ua: bool = False
+        random_ua: bool = False,
+        user_agent: Optional[str] = None
     ):
         self.input_language = input_language
         self.secondary_language = secondary_language
         self.random_ua = random_ua
+        self.user_agent = user_agent
 
 
     # -------------------------------------------------------- Public methods -------------------------------------------------------- #
@@ -31,7 +33,8 @@ class Paraphraser:
         string: str,
         input_language: Optional[str] = None,
         secondary_language: Optional[str] = None,
-        random_ua: Optional[bool] = None
+        random_ua: Optional[bool] = None,
+        user_agent: Optional[str] = None
     ) -> Optional[str]:
         input_language = input_language or self.input_language
         secondary_language = secondary_language or self.secondary_language
@@ -40,7 +43,7 @@ class Paraphraser:
         try:
             return self.__translate(
                 self.__translate(
-                    string, input_language, secondary_language, random_ua
+                    string, input_language, secondary_language, random_ua, user_agent=user_agent or self.user_agent
                 ), secondary_language, input_language, random_ua
             )
         except:
@@ -54,12 +57,13 @@ class Paraphraser:
         s: str,
         src_lang: str,
         dest_lang: str,
-        random_ua: bool
+        random_ua: bool,
+        user_agent: Optional[str] = None
     ) -> str:
         from googletrans import Translator
         from googletrans.constants import DEFAULT_USER_AGENT
 
-        ua = DEFAULT_USER_AGENT
+        ua = user_agent or DEFAULT_USER_AGENT
 
         if random_ua:
             from fake_useragent import UserAgent
