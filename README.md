@@ -1,6 +1,6 @@
 # paraphrase_googletranslate
 
-![python_version](https://img.shields.io/static/v1?label=Python&message=3.5%20|%203.6%20|%203.7&color=blue) [![PyPI downloads/month](https://img.shields.io/pypi/dm/paraphrase_googletranslate?logo=pypi&logoColor=white)](https://pypi.python.org/pypi/paraphrase_googletranslate)
+
 
 ## Description
 
@@ -8,29 +8,33 @@ Paraphrasing via google translate
 
 ## Install
 
-````bash
+~~~~bash
 pip install paraphrase_googletranslate
 # or
 pip3 install paraphrase_googletranslate
-````
+~~~~
 
 ## Usage
 
-```python
+~~~~python
 from paraphrase_googletranslate import Paraphraser
 
-original = '"The quick brown fox jumps over the lazy dog" is an English-language pangram—a sentence that contains all of the letters of the English alphabet. Owing to its brevity and coherence, it has become widely known. The phrase is commonly used for touch-typing practice, testing typewriters and computer keyboards, displaying examples of fonts, and other applications involving text where the use of all letters in the alphabet is desired.'
+original = 'Canvas Print Art size:12inchx12inch(30cmx30cm)x2panels Framed Ready to Hang. Brand: Amoy Art. Canvas print is already perfectly stretched over wooden frame and also hooks have been mounted on each panel,which easily to hang out of box.A perfect wall decorations paintings for living room, bedroom, kitchen, office, Hotel, dining room, office, bathroom, bar etc. HD pictures photo printed on canvas with vivid color on high quality canvas,A perfect gift for your relatives and friends. Packed in Carton Box.100% satisfied guarantee. Shop with confidence!'
 
-phraser = Paraphraser(random_ua=True)
+phraser = Paraphraser()
 
-rephrased = phraser.paraphrase(original)
+rephrased = phraser.paraphrase(original, secondary_language='es')
+print(rephrased)
+rephrased = phraser.paraphrase(rephrased, secondary_language='de')
+print(rephrased)
+rephrased = phraser.paraphrase(rephrased, secondary_language='fr')
+
+print('\n\n\n')
 
 print(original)
 print(rephrased)
+~~~~
 
-#This will print:
+## Dependencies
 
-#"The quick brown fox jumps over the lazy dog" is an English-language pangram—a sentence that contains all of the letters of the English alphabet. Owing to its brevity and coherence, it has become widely known. The phrase is commonly used for touch-typing practice, testing typewriters and computer keyboards, displaying examples of fonts, and other applications involving text where the use of all letters in the alphabet is desired.
-
-#"The quick brown fox jumps over the lazy dog" is an English-language pangram a phrase that contains all the letters of the English alphabet. Because of its brevity and consistency, it has become widely known. The phrase is commonly used to practice typing to touch, trying typewriters and computer keyboards, showing examples of sources, and other applications involving the use of text where all the letters of the alphabet is desired.
-```
+[fake-useragent](https://pypi.org/project/fake-useragent), [google-trans-new](https://pypi.org/project/google-trans-new), [paraphrase-googletranslate](https://pypi.org/project/paraphrase-googletranslate)
