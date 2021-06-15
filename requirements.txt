@@ -1,2 +1,1 @@
 google-trans-new==1.1.9
-paraphrase-googletranslate==0.0.4
