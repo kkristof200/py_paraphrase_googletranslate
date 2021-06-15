@@ -10,7 +10,7 @@ else:
 
 setuptools.setup(
     name='paraphrase_googletranslate',
-    version='0.0.4',
+    version='0.0.5',
     author='Kristóf-Attila Kovács',
     description='paraphrase_googletranslate',
     long_description=long_description,
@@ -18,9 +18,8 @@ setuptools.setup(
     url='https://github.com/kkristof200/py_paraphrase_googletranslate',
     packages=setuptools.find_packages(),
     install_requires=[
-        'fake-useragent>=0.1.11',
         'google-trans-new>=1.1.9',
-        'paraphrase-googletranslate>=0.0.4'
+        'paraphrase-googletranslate>=0.0.5'
     ],
     classifiers=[
         'Programming Language :: Python :: 3.4',

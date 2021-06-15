@@ -37,4 +37,4 @@ print(rephrased)
 
 ## Dependencies
 
-[fake-useragent](https://pypi.org/project/fake-useragent), [google-trans-new](https://pypi.org/project/google-trans-new), [paraphrase-googletranslate](https://pypi.org/project/paraphrase-googletranslate)
+[google-trans-new](https://pypi.org/project/google-trans-new), [paraphrase-googletranslate](https://pypi.org/project/paraphrase-googletranslate)

@@ -1,3 +1,2 @@
-fake-useragent==0.1.11
 google-trans-new==1.1.9
-paraphrase-googletranslate==0.0.3
+paraphrase-googletranslate==0.0.4
